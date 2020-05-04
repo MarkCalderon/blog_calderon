@@ -1,0 +1,38 @@
+{
+  "name": "blog_calderon",
+  "version": "1.0.0",
+  "description": "A lightweight react-based blog with a LP and a dashboard anagement coupled with firebase",
+  "main": "index.js",
+  "scripts": {
+    "min": "imagemin src/img/* --out-dir=public/assets/img",
+    "start": "webpack-dev-server --inline --history-api-fallback"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkCalderon/blog_calderon.git"
+  },
+  "keywords": [
+    "React",
+    "LP",
+    "Developer",
+    "LP",
+    "Blog"
+  ],
+  "author": "Mark Angeo Calderon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarkCalderon/blog_calderon/issues"
+  },
+  "homepage": "https://github.com/MarkCalderon/blog_calderon#readme",
+  "dependencies": {
+    "normalize-scss": "^7.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
