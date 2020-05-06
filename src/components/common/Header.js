@@ -5,7 +5,12 @@ export default class Header extends React.Component {
     render() {
         return (
             <header>
-                <h1>Header</h1>
+                <h1>DEV-CALDERON</h1>
+                <ul className="social__list">
+                    <li><a href="#"><i className="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
+                    <li><a href="#"><i className="fab fa-github"></i></a></li>
+                </ul>
             </header>
         )
     }

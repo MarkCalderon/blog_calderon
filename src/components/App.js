@@ -1,8 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
-const Normalize = require('normalize')
-
 import Header from './common/Header'
 import Footer from './common/Footer'
 
@@ -12,7 +10,7 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <main>
+            <main className="home">
                 <Header />
 
                 <Router>
@@ -20,7 +18,7 @@ export default class App extends React.Component {
                         <Route path="/" exact component={TopContent}/>
                     </Switch>
                 </Router>
-                <Footer />
+                {/*<Footer />*/}
                 
             </main>
         )

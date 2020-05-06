@@ -1,0 +1,37 @@
+// HOME.SCSS
+
+.home {
+    .inner {
+        margin: 100px auto 0;
+        padding: 0 20px;
+        max-width: 1040px;
+        height: 1050px;
+
+        .postContainer {
+            
+            .postTitle {
+                @include flex($jc: flex-start, $ai: center);
+
+                h2 {
+                    @include font($fw: 500, $fs: 23px, $flh: 1, $tt: uppercase);
+                }
+
+                h3 {
+                    margin-left: 10px;
+                   @include font($tt: uppercase, $fs: 23px, $fw: 500, $flh: 1); 
+                }
+
+                span {
+                    margin-left: 10px;
+                    @include font($fs: 18px, $fw: 500, $flh: 1);
+                }
+            }
+            .postBody {
+                margin-top: 20px;
+                p {
+                    @include font($fw: 100, $fs: 18px);
+                }
+            }
+        }
+    }
+}
