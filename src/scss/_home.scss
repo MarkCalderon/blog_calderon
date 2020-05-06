@@ -8,30 +8,53 @@
         height: 1050px;
 
         .postContainer {
-            
-            .postTitle {
-                @include flex($jc: flex-start, $ai: center);
 
-                h2 {
-                    @include font($fw: 500, $fs: 23px, $flh: 1, $tt: uppercase);
+            .postItem {
+                padding: 20px;
+                background: rgba(lightgray, 0.1);
+                box-shadow: 1px 1px 5px 5px rgba(lightgray, 0.2);
+                border-radius: 5px;
+
+                .postTitle {
+                    @include flex($jc: flex-start, $ai: center);
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid rgba(lightgray, 0.2);
+
+                    h2 {
+                        @include font($fw: 500, $fs: 23px, $flh: 1, $tt: uppercase);
+                        text-shadow: 1px 1px 1px rgba(gray, 0.5);
+                    }
+
+                    h3 {
+                        margin-left: 10px;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        background: lightyellow;
+
+                        @include font($tt: uppercase, $fs: 23px, $fw: 500, $flh: 1);
+                        text-shadow: 1px 1px 1px rgba(gray, 0.5);
+                    }
+
+                    span {
+                        margin-left: 10px;
+                        @include font($fs: 18px, $fw: 500, $flh: 1);
+                        text-shadow: 1px 1px 1px rgba(gray, 0.5);
+                    }
                 }
 
-                h3 {
-                    margin-left: 10px;
-                   @include font($tt: uppercase, $fs: 23px, $fw: 500, $flh: 1); 
-                }
+                .postBody {
+                    margin-top: 20px;
 
-                span {
-                    margin-left: 10px;
-                    @include font($fs: 18px, $fw: 500, $flh: 1);
+                    p {
+                        @include font($fw: 100, $fs: 18px, $fls: 0.1em);
+
+                        &:not(:first-child) {
+                            margin-top: 15px;
+                        }
+                    }
                 }
             }
-            .postBody {
-                margin-top: 20px;
-                p {
-                    @include font($fw: 100, $fs: 18px);
-                }
-            }
+
         }
     }
 }

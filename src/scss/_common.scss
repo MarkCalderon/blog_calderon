@@ -15,10 +15,10 @@ $fontFamily: 'Roboto', sans-serif;
     flex-direction: $fd;
 }
 
-@mixin font($ff: $fontFamily, $fw: 100, $fs: 10px, $fos: normal, $fc: $black, $flh: 1.5, $flt: normal, $tt: normal) {
+@mixin font($ff: $fontFamily, $fw: 100, $fs: 10px, $fos: normal, $fc: $black, $flh: 1.5, $fls: normal, $tt: normal) {
     font: $fw $fs $ff;
     font-style: $fos;
-    letter-spacing: $flt;
+    letter-spacing: $fls;
     line-height: $flh;
     text-transform: $tt;
 }
@@ -37,12 +37,12 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 150px;
     @include flex($ai: center, $jc: center, $fd: column);
 
     h1 {
-        @include font($fs: 30px);
-        @include hover;
+        @include font($fs: 30px, $fw: 300);
+        text-shadow: 1px 1px 1px rgba(gray, 0.5);
     }
 
     .social__list {
@@ -71,7 +71,7 @@ header {
 main {
     &:before {
         width: 100%;
-        height: 100px;
+        height: 150px;
         display: block;
         content: '';
     }
