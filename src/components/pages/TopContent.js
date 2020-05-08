@@ -11,7 +11,7 @@ export default class TopContent extends React.Component {
                     <PostData 
                         title="The not so typical hello world..."
                         category="DEVELOPER'S LOG"
-                        datePosted="06.05.2020"
+                        datePosted="08.05.2020"
                         body="<p>Good day everyone!</p>
                         <p>Today marks the start of creation of <strong> DEV-CALDERON.</strong></p>
                         <p>This site was built from scratch up using React. This will serve as a documentation of my experiences as a web engineer.</p>
