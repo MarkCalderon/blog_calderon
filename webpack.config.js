@@ -22,7 +22,7 @@ module.exports = {
         compress: true,
         // Hot Module Replacement, Automatically reloads browser when modifications are made.
         hot: true,
-        port: 3123,
+        port: 4000,
         // Allows server to fallback to contentBase (React Initial load upon set URL path)
         historyApiFallback: true,
     },

@@ -2,27 +2,44 @@
 
 .home {
     .inner {
-        margin: 100px auto 0;
+        margin: 20px auto 60px;
         padding: 0 20px;
         max-width: 1040px;
-        height: 1050px;
 
         .postContainer {
 
             .postItem {
-                padding: 20px;
+                padding: 50px 40px;
                 background: rgba(lightgray, 0.1);
                 box-shadow: 1px 1px 5px 5px rgba(lightgray, 0.2);
                 border-radius: 5px;
+                @include mRes {
+                    padding: 20px;
+                }
+
+                &:not(:first-child) {
+                    margin-top: 100px;
+                }
 
                 .postTitle {
                     @include flex($jc: flex-start, $ai: center);
                     padding-bottom: 10px;
                     border-bottom: 1px solid rgba(lightgray, 0.2);
+                    @include mRes {
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                    }
 
                     h2 {
                         @include font($fw: 500, $fs: 23px, $flh: 1, $tt: uppercase);
                         text-shadow: 1px 1px 1px rgba(gray, 0.5);
+                        @include mRes {
+                            margin-top: 20px;
+                            order: 3;
+                            font-size: 20px;
+                            line-height: 1.5;
+                        }
                     }
 
                     h3 {
@@ -30,15 +47,25 @@
                         padding: 5px 10px;
                         border-radius: 5px;
                         background: lightyellow;
-
                         @include font($tt: uppercase, $fs: 23px, $fw: 500, $flh: 1);
                         text-shadow: 1px 1px 1px rgba(gray, 0.5);
+                        @include mRes {
+                            width: auto;
+                            margin: 10px auto 0;
+                            font-size: 19px;
+                            text-align: center;
+                        }
                     }
 
                     span {
                         margin-left: 10px;
                         @include font($fs: 18px, $fw: 500, $flh: 1);
                         text-shadow: 1px 1px 1px rgba(gray, 0.5);
+                        @include mRes {
+                            margin: 10px 0 0 0;
+                            text-align: center;
+                            font-size: 15px;
+                        }
                     }
                 }
 
@@ -46,10 +73,23 @@
                     margin-top: 20px;
 
                     p {
-                        @include font($fw: 100, $fs: 18px, $fls: 0.1em);
+                        @include font($fw: 100, $fs: 18px, $fls: 0.03em, $flh: 2);
+                        @include mRes {
+                            font-size: 15px;
+                            line-height: 1.6;
+                        }
 
                         &:not(:first-child) {
                             margin-top: 15px;
+                        }
+                    }
+
+                    small {
+                        display: block;
+                        margin-top: 15px;
+                        @include font($fw: 500, $fs: 18px);
+                        @include mRes {
+                            text-align: right;
                         }
                     }
                 }

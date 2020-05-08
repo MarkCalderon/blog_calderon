@@ -32,6 +32,13 @@ $fontFamily: 'Roboto', sans-serif;
     }
 }
 
+@mixin mRes {
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        @content;
+    }
+}
+
 header {
     position: fixed;
     top: 0;
