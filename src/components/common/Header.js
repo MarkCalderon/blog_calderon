@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, Switch} from 'react-router-dom'
+import {Link, Switch, Route} from 'react-router-dom'
 
 export default class Header extends React.Component {
     render() {

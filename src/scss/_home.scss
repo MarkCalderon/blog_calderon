@@ -39,6 +39,7 @@
                         text-shadow: 1px 1px 1px rgba(gray, 0.5);
                         @include mRes {
                             margin-top: 20px;
+                            text-align: center;
                             order: 3;
                             font-size: 20px;
                             line-height: 1.5;
@@ -75,6 +76,23 @@
                 .postBody {
                     margin-top: 20px;
 
+                    .a--c {
+                        text-align: center;
+                    }
+
+                    .m--c {
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    .m--l {
+                        margin-left: auto;
+                    }
+
+                    .m--r {
+                        margin-right: auto;
+                    }
+
                     p {
                         @include font($fw: 100, $fs: 18px, $fls: 0.03em, $flh: 2);
                         @include mRes {
@@ -84,6 +102,61 @@
 
                         &:not(:first-child) {
                             margin-top: 15px;
+                        }
+                    }
+
+                    blockquote {
+                        display: block;
+                        padding: 20px 0;
+                        margin: 0 auto 20px;
+                        width: 65%;
+                        text-align: center;
+                        border-top: 1px solid lightgray;
+                        border-bottom: 1px solid lightgray;
+                        @include font($fw: 100, $fs: 18px, $fls: 0.03em, $flh: 2);
+                        @include mRes {
+                            font-size: 16px;
+                        }
+
+                        cite {
+                            display: block;
+                        }
+                    }
+
+                    figure {
+                        @include flex($jc: center);
+                        i {
+                            font-size: 200px;
+                            color: red;
+                            @include mRes {
+                                width: auto;
+                                font-size: 80px;
+                            }
+                        }
+                    }
+
+                    h4 {
+                        @include font($fw: 500, $fs: 20px, $fls: 0.03em, $flh: 2);
+                        @include mRes {
+                            font-size: 15px;
+                            line-height: 1.7;
+                        }
+
+                        &:not(:first-child) {
+                            margin-top: 15px;
+                        }
+                    }
+
+                    ul {
+                        margin-top: 15px;
+                        padding-left: 20px;
+
+                        li {
+                            @include font($fw: 100, $fs: 18px, $fls: 0.03em, $flh: 2);
+                            @include mRes {
+                                font-size: 15px;
+                                line-height: 1.6;
+                            }
                         }
                     }
 

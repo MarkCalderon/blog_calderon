@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from './common/Header'
 
 import TopContent from './pages/TopContent'
+import AdminContent from './pages/AdminContent'
 
 export default class App extends React.Component {
 
@@ -28,16 +29,16 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <main className="home">
+            <Router>
+
                 <Header />
 
-                <Router>
-                    <Switch>
-                        <Route path="/" exact component={TopContent}/>
-                    </Switch>
-                </Router>
+                <Switch>
+                    <Route path="/" exact component={TopContent}/>
+                    <Route path="/admin" component={TopContent}/>
+                </Switch>
                 
-            </main>
+            </Router>
         )
     }
 }
