@@ -158,6 +158,21 @@
                                 line-height: 1.6;
                             }
                         }
+
+                        &.no--bullet {
+                            padding-left: 0;
+                            list-style-type: none;
+
+                            a {
+                                color: $blue;
+                                text-decoration: none;
+                                @include hover;
+                            }
+                        }
+                    }
+
+                    strong {
+                        @include font($fw: 600, $fs: 18px, $fls: 0.03em, $flh: 2);
                     }
 
                     small {
@@ -166,6 +181,14 @@
                         @include font($fw: 500, $fs: 18px);
                         @include mRes {
                             text-align: right;
+                        }
+                    }
+
+                    pre {
+                        @include font($fs: 15px);
+
+                        &:not(:first-child) {
+                            margin-top: 15px;
                         }
                     }
                 }

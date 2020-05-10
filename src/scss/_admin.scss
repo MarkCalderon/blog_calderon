@@ -1,0 +1,123 @@
+// admin.SCSS
+
+.admin {
+    .inner {
+        margin: 20px auto 60px;
+        padding: 0 20px;
+        max-width: 1040px;
+
+        @include mRes {
+            margin-top: 0;
+        }
+
+        .adminContainer {
+
+            h4 {
+                padding: 10px 0;
+                background: rgba(lightgray, 0.1);
+                box-shadow: 1px 1px 5px 5px rgba(lightgray, 0.2);
+                border-radius: 5px;
+                text-align: center;
+                @include font($fs: 30px, $fw: 500, $ff: $fontFamily, $tt: uppercase);
+
+                &.isAdmin {
+                }
+            }
+
+            button {
+                margin: 20px auto;
+                display: block;
+                height: 50px;
+                width: 300px;
+                background: rgba(lightgray, 0.5);
+                box-shadow: 1px 1px 5px 5px rgba(lightgray, 0.2);
+                border: 0;
+                @include hover;
+                @include font($ff: $fontFamily, $tt: uppercase, $fw: 500, $fs: 20px);
+            }
+        }
+
+        .adminOption {
+            margin: 10px 0;
+            @include flex($ff: nowrap);
+
+            button {
+                width: calc(100% / 3 - 7px);
+                padding: 10px;
+                background: rgba(lightgray, 0.5);
+                box-shadow: 1px 1px 5px 5px rgba(lightgray, 0.2);
+                border: 0;
+                @include hover;
+                @include font($ff: $fontFamily, $tt: uppercase, $fw: 500, $fs: 20px);
+                @include flex($fd: column, $jc: center, $ai: center);
+                @include mRes {
+                    padding: 5px;
+                    width: calc(100% / 3);
+                    min-height: 100px;
+                    font-size: 14px;
+                }
+
+                span {
+                    margin-top: 5px;
+                    word-break: break-all;
+                }
+
+                &:not(:first-child) {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .adminBoard {
+            .postForm {
+                .postForm__table {
+                    width: 100%;
+
+                    tbody {
+
+                        tr {
+                            th {
+                                padding: 7px 0;
+                                text-align: left;
+                                @include font($ff: $fontFamily, $tt: uppercase, $fw: 500, $fs: 15px);
+                            }
+
+                            td {
+                                padding: 7px 0;
+
+                                input[type="text"] {
+                                    width: 100%;
+                                    height: 40px;
+                                    padding: 10px;
+                                }
+
+                                select {
+                                    padding: 10px;
+                                    width: 30%;
+                                    min-width: 200px;
+                                    height: 40px;
+                                }
+
+                                .textarea {
+                                    padding: 10px;
+                                    height: 150px;
+                                    width: 100%;
+                                    resize: none;
+                                }
+
+                                input[type="submit"] {
+                                    margin: auto;
+                                    display: block;
+                                    width: 150px;
+                                    height: 40px;
+                                    @include font($ff: $fontFamily, $tt: uppercase, $fw: 500, $fs: 15px);
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

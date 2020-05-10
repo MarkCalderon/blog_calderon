@@ -14,7 +14,10 @@ export default class PostData extends React.Component {
 
     detectCategory() {
         if(this.props.category == 1) {
-            return `Developer's Log`
+            return `DEVELOPER'S LOG`
+        }
+        else if(this.props.category == 2) {
+            return 'DEVELOPMENT TOOLS'
         }
     }
 
@@ -33,9 +36,6 @@ export default class PostData extends React.Component {
                     <div className="postBody">
                         <div dangerouslySetInnerHTML={this.createMarkup()} />
                         <small>{this.props.poster}</small>
-                    </div>
-                    <div className="postSNS">
-                        <div className=""></div>
                     </div>
                 </article>
         )
