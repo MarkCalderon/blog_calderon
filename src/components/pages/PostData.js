@@ -1,4 +1,7 @@
 import React from 'react'
+import hljs from "highlight.js";
+import 'highlight.js/styles/tomorrow-night-eighties.css';
+// import "./dracula.css";
 
 export default class PostData extends React.Component {
     constructor() {
@@ -12,6 +15,12 @@ export default class PostData extends React.Component {
         } 
     }
 
+    updateCodeSyntaxHighlighting() {
+        document.querySelectorAll("pre code").forEach(block => {
+          hljs.highlightBlock(block);
+        });
+    };
+
     detectCategory() {
         if(this.props.category == 1) {
             return `DEVELOPER'S LOG`
@@ -21,8 +30,13 @@ export default class PostData extends React.Component {
         }
     }
 
+    componentDidUpdate() {
+        this.updateCodeSyntaxHighlighting()
+    }
+
     componentDidMount() {
         this.detectCategory()
+        this.updateCodeSyntaxHighlighting()
     }
 
     render() {

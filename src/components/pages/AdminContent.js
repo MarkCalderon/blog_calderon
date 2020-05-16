@@ -16,6 +16,7 @@ export default class AdminContent extends React.Component {
             return (
                 <main className="admin">
                     <div className="inner">
+                        <a href="#" onClick={(event) => this.props.onSignOut()}>Sign out</a>
                         <section className="adminContainer">
                             <h4 className="isAdmin">ADMINISTRATIVE CONTROL</h4>
                         </section>
@@ -38,7 +39,9 @@ export default class AdminContent extends React.Component {
                 <div className="inner">
                     <section className="adminContainer">
                         <h4>ADMIN ACCESS ONLY</h4>
-                        <button onClick={(event) => this.props.signInWithPopUp()}>AUTHENTICATE ACCESS</button>
+                        <div className="g-signin2" data-onsuccess="onSignIn"></div>
+                        <a href="#" onClick={(event) => this.props.onSignOut()}>Sign out</a>
+                        {/*<button onClick={(event) => this.props.signInWithPopUp()}>AUTHENTICATE ACCESS</button>*/}
                     </section>
                 </div>
             </main>

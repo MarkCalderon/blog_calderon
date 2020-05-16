@@ -11,6 +11,7 @@ export default class App extends React.Component {
     constructor() {
         super()
         this.signInWithPopUp = this.signInWithPopUp.bind(this)
+        this.onSignOut = this.onSignOut.bind(this)
         this.state = {
             isAuth: false
         }
@@ -38,20 +39,20 @@ export default class App extends React.Component {
             var token = result.credential.accessToken
             // The signed-in user info.
             var user = result.user
-
-            if(user.email == "mac.a4@live.com") {
+            
+            firebase.auth().onAuthStateChanged((user) => {
+              if (user.email === 'mac.a4@live.com') {
                 return (
                     this.setState({
                         isAuth: true
                     })
                 )
-            }
+              }
+              return (
+                  console.log('Security: Un-Authorized Access...')
+              )
+            });
 
-            return (
-                console.log('Security: Un-Authorized Access...')
-            )
-
-            // ...
         }).catch(error => {
             // Handle Errors here.
             var errorCode = error.code
@@ -60,15 +61,34 @@ export default class App extends React.Component {
             var email = error.email
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential
-
-            console.log(errorCode)
             // ...
+        });
+    }
+
+    onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+
+    onSignOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
         });
     }
 
     componentDidMount() {
         window.scrollTo(0, 0)
         this.setFirebase()
+
+        window.gapi.load('auth2', () => {
+            this.auth2 = window.gapi.auth2.init({
+                client_id: '563214309482-lhb5lqeubgb2qc94sgudlcodlsnr1pgf.apps.googleusercontent.com'
+            });
+        })
     }
 
     render() {
@@ -81,7 +101,7 @@ export default class App extends React.Component {
                     <Route path="/" exact component={TopContent}/>
                     <Route 
                         path="/admin" 
-                        render={(props) => <AdminContent {...props} signInWithPopUp={this.signInWithPopUp} isAuth={this.state.isAuth}/> }
+                        render={(props) => <AdminContent {...props} onSignOut={this.onSignOut} isAuth={this.state.isAuth}/> }
                     />
                 </Switch>
                 

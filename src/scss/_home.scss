@@ -1,5 +1,4 @@
 // HOME.SCSS
-
 .home {
     .inner {
         margin: 20px auto 60px;
@@ -93,6 +92,17 @@
                         margin-right: auto;
                     }
 
+                    pre {
+                        code {
+                            div {
+                                list-style-type: none;
+                                div {
+                                    padding-left: 40px;
+                                }
+                            }
+                        }
+                    }
+
                     p {
                         @include font($fw: 100, $fs: 18px, $fls: 0.03em, $flh: 2);
                         @include mRes {
@@ -102,6 +112,12 @@
 
                         &:not(:first-child) {
                             margin-top: 15px;
+                        }
+                    }
+
+                    pre {
+                        code {
+                            white-space: normal !important;
                         }
                     }
 
@@ -146,6 +162,18 @@
                             margin-top: 15px;
                         }
                     }
+                    
+                    a {
+                        display: block;
+                        margin-top: 15px;
+                        text-decoration: none;
+                        color: $blue;
+                        @include hover;
+                        @include font($fw: 500, $fs: 18px, $fls: 0.03em, $flh: 2);
+                        @include mRes {
+                            font-size: 16px;
+                        }
+                    }
 
                     ul {
                         margin-top: 15px;
@@ -183,17 +211,8 @@
                             text-align: right;
                         }
                     }
-
-                    pre {
-                        @include font($fs: 15px);
-
-                        &:not(:first-child) {
-                            margin-top: 15px;
-                        }
-                    }
                 }
             }
-
         }
     }
 }
