@@ -1,6 +1,8 @@
 import React from 'react'
 import PostData from './PostData'
 
+import SamplePost from './SamplePost'
+
 export default class TopContent extends React.Component {
 
     constructor() {
@@ -45,6 +47,7 @@ export default class TopContent extends React.Component {
             <main className="home">
                 <div className="inner">
                     <section className="postContainer">
+                        <SamplePost></SamplePost>
                         {dataList}
                     </section>
                 </div>
